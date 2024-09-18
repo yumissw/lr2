@@ -1,22 +1,24 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
-func func1(s string) (x int) {
-	x = len(s)
-
-	return x
+func func1(s string) int {
+	return len(s) - 2
 }
 
 func main() {
 
 	var s string
-	fmt.Print("введите строку: ")
+	r := bufio.NewReader(os.Stdin)
 
-	var x int
-	x = func1(s)
+	fmt.Print("введите строку: ")
+	s, _ = r.ReadString('\n')
+
+	x := func1(s)
 
 	fmt.Println("длина строки: ", x)
 
